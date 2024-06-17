@@ -1,0 +1,9 @@
+body {
+    margin: 0; /* rimuove tutti i margini predefiniti del browser intorno al body */
+    line-height: normal; /* imposta l'altezza della linea di testo a quella normale, secondo il font utilizzato */
+}
+
+a.menu-link {
+    text-decoration: none; /* rimuove la sottolineatura dai link */
+    color: inherit; /* imposta il colore del testo del link uguale al colore del testo dell'elemento padre */
+}

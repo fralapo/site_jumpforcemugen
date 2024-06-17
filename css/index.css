@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Press Start 2P'; 
+    src: url('../font/PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal; /* il peso del font */
+    font-style: normal; /* lo stile del font */
+}
+
+body {
+    margin: 0; /* rimuove i margini predefiniti del browser */
+    display: flex; /* usa flexbox per il layout */
+    flex-direction: column; /* imposta la direzione degli elementi in colonna */
+    background: #000031;
+    height: 100vh; /* altezza del body uguale all'altezza della finestra */
+    overflow: hidden; /* nasconde il contenuto che trabocca fuori dal body */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center; /* centra orizzontalmente il logo */
+    align-items: center; /* centra verticalmente il logo */
+    width: 100%;
+    padding: 20px 0; /* padding verticale per il logo */
+    z-index: 1; /* assicura che il logo sia sopra la gif */
+    position: absolute; /* posizione assoluta rispetto al body */
+    top: 0; /* posizione in cima alla pagina */
+}
+
+.logo-container img {
+    max-height: 60px; /* altezza massima del logo */
+    max-width: 100%; /* larghezza massima del logo */
+    height: auto; /* altezza del logo si adatta automaticamente */
+    width: auto; /* larghezza del logo si adatta automaticamente */
+}
+
+.content {
+    width: 100%; /* larghezza del contenuto occupa tutta la pagina */
+    display: flex;
+    justify-content: center; /* centra orizzontalmente gli elementi interni */
+    align-items: center; /* centra verticalmente gli elementi interni */
+    flex-grow: 1; /* il contenuto si espande per riempire lo spazio disponibile */
+    position: relative; /* posizione degli elementi posizionati all'interno */
+}
+
+.gif-container {
+    position: absolute; /* posizione assoluta rispetto al body */
+    top: 0; /* posizione in cima alla pagina */
+    width: 100%; /* larghezza del contenitore occupa tutta la pagina */
+    height: 100vh; /* altezza del contenitore uguale all'altezza della finestra */
+    overflow: hidden; /* nasconde il contenuto che trabocca fuori dal contenitore */
+}
+
+.background-gif {
+    width: 100%; /* larghezza dell'immagine di sfondo occupa tutto il contenitore */
+    height: 100%; /* altezza dell'immagine di sfondo occupa tutto il contenitore */
+    object-fit: cover; /* l'immagine copre il contenitore mantenendo le proporzioni */
+    display: block; /* l'immagine è un elemento a blocco */
+}
+
+.play-now {
+    position: absolute; /* posizione assoluta rispetto al contenitore */
+    bottom: 20px; /* distanza dal fondo del contenitore */
+    left: 50%; /* posiziona l'elemento al centro orizzontale */
+    transform: translateX(-50%); /* centra esattamente l'elemento orizzontalmente */
+    font-size: 2em;
+    color: yellow; /* colore del testo */
+    font-family: 'Press Start 2P', cursive; /* font usato per il testo */
+    text-shadow: 2px 2px 4px #000000; /* ombra del testo */
+    z-index: 2; /* assicura che il testo sia sopra l'immagine di sfondo */
+    text-decoration: none; /* rimuove la sottolineatura del link */
+    animation: blink 1s step-start infinite; /* animazione lampeggiante */
+    white-space: nowrap; /* impedisce che il testo vada a capo */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0; /* il testo diventa trasparente al 50% dell'animazione */
+    }
+}

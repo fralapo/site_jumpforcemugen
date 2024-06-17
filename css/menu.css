@@ -1,0 +1,126 @@
+body {
+    background-image: url('../img/background_menu.gif');
+    background-size: cover; /* fa sì che l'immagine copra tutto lo spazio disponibile */
+    background-repeat: no-repeat; /* evita la ripetizione dell'immagine */
+    background-position: center; /* centra l'immagine di sfondo */
+    background-color: #000031; /* background nel caso l'immagine non fosse disponibile */
+    font-family: Arial, sans-serif;
+    color: white; /* colore del testo*/
+    margin: 0; /* modifica i margini predefiniti del browser */
+    display: flex; /* imposta Flexbox per il layout del corpo */
+    justify-content: center; /* centra orizzontalmente gli elementi */
+    align-items: center; /* centra verticalmente gli elementi */
+    height: 100vh; /* imposta l'altezza del body e dell'altezza della finestra al 100% */
+    overflow: hidden; /* nasconde il contenuto che trabocca fuori dal body */
+}
+
+.menu {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; /* imposta la larghezza del menu */
+    height: 100%; /* imposta l'altezza del menu */
+    padding: 20px;
+}
+.menu-grid {
+    display: grid; /* imposta il layout a griglia per il contenuto del menu */
+    width: 80%; /* larghezza della griglia */
+    max-width: 1200px; /* larghezza massima della griglia */
+    aspect-ratio: 1.9 / 1; /* mantiene il rapporto d'aspetto */
+    gap: 3px; /* spazio tra gli elementi della griglia */
+}
+
+.menu-grid a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 5px solid white;
+    padding: 0;
+    box-sizing: border-box; /* include il bordo e il padding nelle dimensioni totali dell'elemento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* aggiunge un'ombra al box */
+}
+
+.menu-item {
+    width: 100%; /* imposta la larghezza dell'elemento al 100% del contenitore */
+    height: 100%; /* imposta l'altezza dell'elemento al 100% del contenitore */
+    object-fit: cover; /* mantiene le proporzioni dell'immagine, coprendo l'intero contenitore */
+    background-size: cover; /* ridimensiona l'immagine di sfondo per coprire l'intero contenitore */
+    background-position: center; /* posiziona l'immagine di sfondo al centro */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-grid a.exit {
+    aspect-ratio: 8 / 1;
+}
+
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr; /* imposta due colonne di uguale larghezza */
+        grid-template-rows: repeat(3, 1fr); /* imposta tre righe di uguale altezza */
+    }
+     
+    .menu-grid a {
+        padding: 0;
+        border: 4px solid white;
+        /*font-size: 250%;*/
+    }
+
+    .menu-grid a.exit {
+        grid-column: span 2; /* exit occupa due colonne */
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-grid {
+        grid-template-columns: 1fr; /* imposta una singola colonna */
+        grid-template-rows: repeat(4, 1fr); /* imposta quattro righe di uguale altezza */
+        aspect-ratio: 1 / 1.55; 
+    }
+
+    .menu-grid a {
+        padding: 0;
+        border: 3px solid white;
+        /*font-size: 250%;*/
+    }
+
+    .menu-grid a.exit {
+        aspect-ratio: 7.8 / 1;
+    }
+    
+    .menu-link.exit .menu-item {
+        content: url('../img/main_menu/colored/exit2.png');
+    }
+    
+    .menu-link.exit:hover .menu-item {
+        content: url('../img/main_menu/bw/bw_exit2.png') !important;
+    }
+}
+
+/* switch immagine all'hover */
+.menu-link.description:hover .menu-item {
+    content: url('../img/main_menu/bw/bw_game_description.png');
+}
+
+.menu-link.gameplay:hover .menu-item {
+    content: url('../img/main_menu/bw/bw_gameplay.png');
+}
+
+.menu-link.contacts:hover .menu-item {
+    content: url('../img/main_menu/bw/bw_contacts.png');
+}
+
+.menu-link.download:hover .menu-item {
+    content: url('../img/main_menu/bw/bw_download.png');
+}
+
+.menu-link.exit:hover .menu-item {
+    content: url('../img/main_menu/bw/bw_exit.png');
+}
+
+/* ingrandisci immagine all'hover */
+.menu-grid a:hover {
+    transform: scale(1.005);
+}

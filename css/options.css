@@ -1,0 +1,105 @@
+/* definisce l'animazione di espansione */
+@keyframes expandFromCenter {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+body {
+    background-image: url('../img/background_menu.gif'); /* imposta un'immagine di sfondo */
+    background-size: cover; /* fa sì che l'immagine copra tutto lo spazio disponibile */
+    background-repeat: no-repeat; /* evita la ripetizione dell'immagine */
+    background-position: center; /* centra l'immagine di sfondo */
+    background-color: #000031; /* colore di sfondo nel caso l'immagine non fosse disponibile */
+    font-family: Arial, sans-serif;
+    color: white; /* colore del testo */
+    margin: 0; /* rimuove i margini predefiniti del browser */
+    display: flex; /* usa flexbox per il layout */
+    justify-content: center; /* centra gli elementi orizzontalmente */
+    align-items: center; /* centra gli elementi verticalmente */
+    height: 100vh; /* altezza del body uguale all'altezza della finestra */
+}
+
+.menu {
+    background-color: #000031; /* colore di sfondo del menu */
+    border: 2px solid #4A4D71; /* bordo del menu */
+    opacity: 95%;
+    padding: 20px; /* padding interno del menu */
+    width: 300px; /* larghezza del menu */
+    animation: expandFromCenter 0.2s ease-out; /* aggiunge l'animazione */
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-between; /* distribuisce gli elementi con spazio tra di loro */
+    padding: 10px; /* padding interno della lista del menu */
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between; /* distribuisce gli elementi con spazio tra di loro */
+    padding: 10px; /* padding interno dell'elemento del menu */
+    cursor: pointer; /* cambia il cursore quando si passa sopra l'elemento */
+}
+
+.menu-yt {
+    display: flex;
+    justify-content: space-between; /* distribuisce gli elementi con spazio tra di loro */
+    padding: 10px; /* padding interno dell'elemento del menu */
+    cursor: pointer; /* cambia il cursore quando si passa sopra l'elemento */
+}
+
+.menu-item:hover {
+    background-color: #4A4D71; /* cambia il colore di sfondo quando si passa sopra l'elemento */
+}
+
+.left {
+    text-align: left; /* allinea il testo a sinistra */
+}
+
+.right {
+    text-align: right; /* allinea il testo a destra */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column; /* allinea gli elementi in colonna */
+}
+
+.form-item {
+    margin-bottom: 10px; /* margine inferiore tra gli elementi del form */
+}
+
+label {
+    margin-bottom: 5px; /* margine inferiore del label */
+    font-size: 0.9em; /* dimensione del font del label */
+}
+
+input, textarea {
+    width: 100%; /* larghezza degli input e textarea occupa tutto lo spazio disponibile */
+    padding: 8px; /* padding interno degli input e textarea */
+    border: 1px solid #4A4D71; /* bordo degli input e textarea */
+    border-radius: 4px; /* angoli arrotondati degli input e textarea */
+    box-sizing: border-box; /* include padding e bordi nelle dimensioni totali */
+    background-color: #000031; /* colore di sfondo degli input e textarea */
+    color: white; /* colore del testo negli input e textarea */
+    resize: none; /* impedisce il ridimensionamento del textarea */
+}
+
+button {
+    width: 100%; /* larghezza del pulsante occupa tutto lo spazio disponibile */
+    padding: 10px; /* padding interno */
+    background-color: transparent;
+    color: white; /* colore del testo*/
+    border: 1px solid #4A4D71; /* bordo del pulsante */
+    cursor: pointer; /* cambia il cursore quando si passa sopra */
+}
+
+button:hover {
+    background-color: #4A4D71; /* cambia il colore di sfondo quando si passa sopra il pulsante */
+}
